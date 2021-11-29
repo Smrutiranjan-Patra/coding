@@ -37,5 +37,14 @@ router.get('/:Id', async (req, res) => {
     }
 })
 
+router.get("/wfh", async (req, res) => {
+    try {
+        const output = await job.find({work_from_home : true}).lean().exec();
+        res.status(201).send(output);
+    }
+    catch (err) {
+        res.status(500).json({ "err": err.nessage });
+    }
+})
 
 module.exports = router;
