@@ -9,7 +9,6 @@ const jobSchema = new mongoose.Schema({
     work_from_home: { type: 'boolean', required: true },
     noticeperiod: { type: 'number', required: true },
     rating: { type: 'number', required: true },
-    skills: [{type: 'string', required: true}],
     city: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "city",

@@ -2,7 +2,6 @@ const express = require('express');
 const job = require('../model/job.model');
 const company = require('../model/company.model');
 const city = require('../model/city.model');
-const skill = require('../model/skill.model');
 
 const router = express.Router();
 
