@@ -23,6 +23,16 @@ router.get('/', async (req, res) => {
     catch (err) {
         res.status(500).json({ err: err.message, status: "failed" });
     }
+});
+
+router.get('/:Id', async (req, res) => {
+    try {
+        const output = await job.findById({ city: req.params.Id }).populate({ path: "city", select: "city" }).lean().exec();
+        res.status(201).send(output);
+    }
+    catch (err) {
+        res.status(500).json({ "err": err.nessage });
+    }
 })
 
 module.exports = router;

@@ -14,6 +14,10 @@ const jobSchema = new mongoose.Schema({
         ref: "city",
         required: true,
     },
-})
+},
+    {
+        versionKey: false,
+        timestamps: true,
+    });
 
 module.exports = mongoose.model('job', jobSchema);
